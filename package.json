@@ -5,7 +5,8 @@
   "main": "restaurant-service.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "author": "Abhishek kumar",
   "license": "MIT",
