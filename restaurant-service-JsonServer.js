@@ -1,5 +1,5 @@
-var faker = require("faker");
-    const { v4: uuidv4 } = require('uuid');
+const { faker } = require('@faker-js/faker');
+const { v4: uuidv4 } = require('uuid');
 //making the fake data for the api
 const generatingDB = () =>{
     
@@ -24,7 +24,7 @@ const generatingDB = () =>{
         address: faker.address.streetAddress(),
         description: faker.lorem.paragraph(),
         rating: faker.datatype.number({min: 1, max: 5}),
-        reviews: faker.random.arrayElements(reviews, 20),
+        reviews: faker.helpers.arrayElements(reviews, 20),
       };
 
       restaurants.push(restaurant);
