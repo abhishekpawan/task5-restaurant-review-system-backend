@@ -13,7 +13,6 @@ const app = express();
 const db = generatingDB();
 const {protect} = require('./middleware/authMiddleware')
 
-app.use(favicon(__dirname + '/public/favicon.png'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
