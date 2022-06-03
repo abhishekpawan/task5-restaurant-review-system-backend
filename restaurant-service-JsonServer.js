@@ -1,11 +1,8 @@
-
+var faker = require("faker");
+    const { v4: uuidv4 } = require('uuid');
 //making the fake data for the api
 const generatingDB = () =>{
     
-    var faker = require("faker");
-    var _ = require("lodash");
-    const { v4: uuidv4 } = require('uuid');
-
     const restaurants = [];
     const reviews = [];
     for (let j = 0; j < 10000; j++) {
