@@ -76,11 +76,11 @@ const loginUser = asyncHandler(async (req, res) => {
 // @access Private
 const getUsers = asyncHandler(async (req, res) => {
   const allUser = await User.find();
-  const filterUser = allUser.filter((user) => {
-    return user.role === "user";
-  });
+  // const filterUser = allUser.filter((user) => {
+  //   return user.role === "user";
+  // });
 
-  res.status(200).json(filterUser);
+  res.status(200).json(allUser);
 });
 
 // @desc Update user data
@@ -94,7 +94,7 @@ const updateUser = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
-  const uodatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
+  const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });
 
