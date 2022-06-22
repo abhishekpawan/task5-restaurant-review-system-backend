@@ -5,10 +5,11 @@ const generatingDB = () =>{
     
     const restaurants = [];
     const reviews = [];
-    for (let j = 0; j < 10000; j++) {
+    for (let j = 0; j < 10; j++) {
       const review = {
         id: uuidv4(),
         user_id:uuidv4(),
+        restaurant_id:uuidv4(),
         name: faker.name.findName(),
         date: faker.date.recent().toString(),
         comment: faker.lorem.paragraph(),
@@ -24,13 +25,15 @@ const generatingDB = () =>{
         address: faker.address.streetAddress(),
         description: faker.lorem.paragraph(),
         rating: faker.datatype.number({min: 1, max: 5}),
-        reviews: faker.helpers.arrayElements(reviews, 20),
+        // reviews: faker.helpers.arrayElements(reviews, 20),
       };
 
       restaurants.push(restaurant);
     }
 
-    return ({restaurants})
+    return ({
+     "restaurants":restaurants,
+      "reviews":reviews})
 }
 
 module.exports = generatingDB;
